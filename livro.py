@@ -45,11 +45,13 @@ class Livro:
 	def __repr__(self) -> str:
 		return f"Livro(titulo={self.titulo!r}, autor={self.autor!r})"
 
+# função para ordenar LESS THAN - ordena de acordo com título limpo 
 	def __lt__(self, other: object) -> bool:
 		if not isinstance(other, Livro):
 			return NotImplemented
 		return (self.chave_busca(), self.id) < (other.chave_busca(), other.id)
 
+# função para definir livros IGUAIS - somente se o id for igual
 	def __eq__(self, other: object) -> bool:
 		if not isinstance(other, Livro):
 			return NotImplemented
