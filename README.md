@@ -1,15 +1,15 @@
 # G28-Busca-EDA2-26.1
 
-# Final_Catalogo-de-Livros-Busca
+# Catalogo de Livros Busca
 
-Número da Lista: X<br>
 Conteúdo da Disciplina: Algoritmos de Busca<br>
+Grupo: 28<br>
 
 ## Alunos
 | Matrícula | Aluno |
 | -- | -- |
 | 231026840 | Laryssa Felix Ribeiro Lopes|
-| xx/xxxxxx | Mayara |
+| 231035731 | Mayara Marques Silva |
 
 ---
 
@@ -23,10 +23,12 @@ O sistema permite o cadastro e a busca de livros utilizando duas abordagens:
 Os livros são organizados com base no título, permitindo buscas eficientes e listagem ordenada.
 
 Além disso, o projeto utiliza:
-- Dados reais inspirados em obras de Clarice Lispector
+
+- Dados reais de obras da autora Clarice Lispector, adaptados a partir do repositório disponível em:
+  https://github.com/giovannafg/Projeto-OO
 - Dados gerados automaticamente com a biblioteca Faker, simulando um ambiente real com grande volume de dados
 
-O objetivo principal é analisar o desempenho dos algoritmos em diferentes cenários.
+O objetivo principal é analisar o desempenho dos algoritmos de busca em diferentes cenários.
 
 ---
 
