@@ -55,7 +55,7 @@ O objetivo principal é analisar o desempenho dos algoritmos de busca em diferen
 
 Clone o repositório:
 ```bash
-git clone (https://github.com/eda2-2026/G28-Busca-EDA2-26.1.git)
+git clone https://github.com/eda2-2026/G28-Busca-EDA2-26.1.git
 cd G28-Busca-EDA2-26.1
 ```
 
