@@ -1,6 +1,6 @@
 # G28-Busca-EDA2-26.1
 
-# Catalogo de Livros Busca
+# Catálogo de Livros de Autores Brasileiros
 
 Conteúdo da Disciplina: Algoritmos de Busca<br>
 Grupo: 28<br>
@@ -24,23 +24,86 @@ Os livros são organizados com base no título, permitindo buscas eficientes e l
 
 Além disso, o projeto utiliza:
 
-- Dados reais de obras da autora Clarice Lispector, adaptados a partir do repositório disponível em:
-  https://github.com/giovannafg/Projeto-OO
-- Dados gerados automaticamente com a biblioteca Faker, simulando um ambiente real com grande volume de dados
+## Base de Dados
 
-O objetivo principal é analisar o desempenho dos algoritmos de busca em diferentes cenários.
+O projeto utiliza uma base de dados construída a partir da API da  
+:contentReference[oaicite:0]{index=0}.
 
+---
+
+### Processo de geração dos dados:
+
+1. Coleta de livros reais via API
+2. Conversão para formato estruturado (`JSON`)
+3. Limpeza dos dados:
+   - remoção de títulos com caracteres inválidos
+   - remoção de idiomas não desejados
+   - filtragem de padrões inconsistentes
+4. Armazenamento local no arquivo:
+
+```
+livros_limpos.json
+
+```
 ---
 
 ## Screenshots
 
-<!-- > Adicione aqui prints do sistema rodando
+Prints do sistema rodando
 
-- Menu do sistema
-- Busca de livro
-- Comparação entre busca sequencial e árvore
-- Listagem em ordem alfabética -->
+### - Menu do sistema:
 
+![Menu do Sistema](images/menu.png)
+
+1. Listar livros
+Mostra todos os livros em ordem alfabética usando a BST (percurso em ordem).
+OBS: Se dois livros tiverem o mesmo título, a ordenação é feita pelo ISBN
+
+2. Buscar livro na BST
+Busca um livro pelo título de forma eficiente (mais rápida que a sequencial).
+
+3. Comparar buscas
+Compara:
+
+      busca sequencial (O(n)) <BR>
+      busca na BST (O(log n), em média) <BR>
+      Mostra número de comparações e tempo.
+
+4. Quantidade de livros
+Exibe o total de livros cadastrados.
+
+0. Sair
+Encerra o programa.
+
+### -  Busca do livro usando Árvore Binária de Busca (BST)
+
+![Busca do Livro](images/busca.png)
+
+### - Comparar busca sequencial e BST
+
+![Comparação de Desempenho](images/comparacao.png)
+
+Comparações
+
+Indicam quantas verificações o algoritmo fez até encontrar o livro.
+
+- Busca Sequencial:
+Compara um a um
+93 comparações (percorreu quase toda a lista)
+- BST:
+Usa a estrutura da árvore para reduzir buscas
+14 comparações (mais eficiente)
+
+Tempo
+
+Tempo total para executar a busca.
+
+- Busca Sequencial: 0.00079510 s
+- BST: 0.00002104 s
+
+### - Quantidade de livros
+
+![Quantidade de Livros](images/quantidade.png)
 ---
 
 ## Instalação 
@@ -65,10 +128,43 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
-### Uso
+### Como executar o projeto
 
-Para executar o projeto:
+1. Gerar base de dados(via API):
 
+```
+python3 gerar_base.py
+```
+
+Isso gera: livros:json
+
+2. Limpar os dados
+
+```
+python3 limpar_base.py
+```
+
+Isso gera: livros_limpos.json
+
+3. Executar o sistema
 ```
 python3 main.py
 ```
+---
+
+## Estrutura do Projeto
+
+```bash
+G28-Busca-EDA2-26.1/
+├── arvore.py               # Implementação da BST
+├── busca_sequencial.py     # Busca sequencial
+├── dados.py                # Leitura do JSON
+├── gerar_base.py           # Geração da base via API
+├── limpar_base.py          # Limpeza dos dados
+├── livro.py                # Classe Livro
+├── livros.json             # Base de dados local
+├── main.py                 # Execução do sistema
+├── no.py                   # Estrutura do nó da árvore
+├── utils.py                # Funções auxiliares
+├── requirements.txt        # Dependências
+└── README.md
