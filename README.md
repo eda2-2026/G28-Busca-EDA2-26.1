@@ -5,6 +5,8 @@
 Conteúdo da Disciplina: Algoritmos de Busca<br>
 Grupo: 28<br>
 
+Vídeo da Apresentação: [link](https://youtu.be/jQt5LYf2fsU)
+
 ## Alunos
 | Matrícula | Aluno |
 | -- | -- |
