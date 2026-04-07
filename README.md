@@ -29,7 +29,7 @@ Além disso, o projeto utiliza:
 ## Base de Dados
 
 O projeto utiliza uma base de dados construída a partir da API da  
-:contentReference[oaicite:0]{index=0}.
+ Open Libray.
 
 ---
 
